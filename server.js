@@ -16,6 +16,8 @@ var db = require("./models")
 // Initializing Sequelize database
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
+        require("./controllers/pinmeController")(app, db.Sequelize);
+        require("./controllers/userController")(app, db.Sequelize);
       console.log("App listening on PORT " + PORT);
     });
   });
