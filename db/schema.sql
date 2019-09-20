@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS pinme_db;
+CREATE DATABASE pinme_db;
