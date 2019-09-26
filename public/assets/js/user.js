@@ -23,7 +23,7 @@ $(document).ready(function () {
                     profile.append(`<br><br>`)
                     profile.append(`<h5> Username: ${users.name} </h5>`)
                     profile.append(`<h5> Email: ${users.email} </h5>`)
-                    profile.append(`<h5> Contact Info: ${users.contact} </h5>`)
+                    // profile.append(`<h5> Contact Info: ${users.contact} </h5>`)
 
                     userProfile.append(profile)
 
@@ -53,8 +53,8 @@ $(document).ready(function () {
         for (i = 0; i < data.length; i++) {
 
             if (data.length === 0) {
-                var noResult = $("<h3>Unfortunately, no classes exist")
-                noResult.html("Unfortunately, no classes exist")
+                var noResult = $("<h3>Unfortunately, you have not favorited any events")
+                noResult.html("Unfortunately, no favorites exists")
                 cardSection.append(noResult)
 
             } else {
@@ -63,7 +63,7 @@ $(document).ready(function () {
                 var date = data[i].date;
                 var description = data[i].desc;
                 var category = data[i].categ;
-                var youtube = data[i].liveLink;
+                // var youtube = data[i].liveLink;
 
 
                 var button = $("<button>Add Class</button>")
