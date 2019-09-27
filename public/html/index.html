@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Google API -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  
+    <!-- Flickity Stylesheet -->
+   <!--  <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+
+
+    <!-- mprogress -->
+ <!--    <link rel="stylesheet" href="assets/css/mprogress.min.css" />
+    <script src="assets/javascript/mprogress.min.js"></script> -->
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+    <!-- UI Kit -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/image.png" />
+    <title>PINME</title>
+  </head>
+
+
+
+
+
+  <body>
+    <div class="container-fluid" id="home">
+      <div class="uk-position-relative">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: fade;">
+            <ul class="uk-slideshow-items">
+                <li>
+                    <img src="https://images.pexels.com/photos/1480687/pexels-photo-1480687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="https://images.pexels.com/photos/1606386/pexels-photo-1606386.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" uk-cover>
+                </li>
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+        </div>
+        <div class="uk-position-top" id="navDiv" >
+            <nav class="uk-navbar-container uk-navbar-transparent" id = "mynav" uk-navbar>
+              <div class = "uk-navbar-left">
+                 <a class="uk-navbar-item uk-logo" href="#"><img src="assets/images/logo.png" id="logo" alt="logo" /></a>
+              </div>
+              <div class="uk-navbar-center">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li>
+                            <a href="#">Parent</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li class="uk-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li class="uk-nav-header">Header</li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="uk-navbar-right">
+                  <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-push">Push</button>
+                </div>
+                <div id="offcanvas-push" uk-offcanvas="flip: true; mode: push; overlay: true">
+                <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+</div>
+            </nav>
+        </div>
+    </div>
+        
+    </div>
+
+
+
+    <div class="container" id="mainbody">
+      <div class="signDiv">
+        <button id="favorites" onclick="showFavorites()">♡ favorites</button>
+        <p class="greet"></p>
+        <button onclick="googleSignIn()" id="signIn">Google SignIn</button>
+        <div class="out">
+          <button id="out" onclick="logOut()">Log out</button>
+        </div>
+      </div>
+
+
+      <h1 id="test-line"></h1>
+
+      <form>
+        <h3>Search your event</h3>
+        <div class="groups">
+          <div class="form-group">
+            <select id="event_input" class="custom-select">
+              <option selected>Any genre</option>
+              <option value="3001">alternative</option>
+              <option value="3002">blues & jazz</option>
+              <option value="3003">classical</option>
+              <option value="3004">culture</option>
+              <option value="3006">edm/electronic</option>
+              <option value="3007">folk</option>
+              <option value="3008">hip hop/rap</option>
+              <option value="3009">indie</option>
+              <option value="3010">latin</option>
+              <option value="3011">metal</option>
+              <option value="3012">opera</option>
+              <option value="3013">pop</option>
+              <option value="3014">r&b</option>
+              <option value="3015">reggae</option>
+              <option value="3016">religious/spiritual</option>
+              <option value="3017">rock</option>
+              <option value="3018">top 40</option>
+              <option value="3099">other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select id="price" class="custom-select">
+              <option selected>Any price</option>
+              <option value="free">free</option>
+              <option value="paid">paid</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select id="date" class="custom-select">
+              <option selected>Any date</option>
+              <option value="today">today</option>
+              <option value="tomorrow">tomorrow</option>
+              <option value="this_week">this week</option>
+              <option value="this_weekend">this weekend</option>
+              <option value="next_week">next week</option>
+              <option value="this_month">this month</option>
+              <option value="next_month">next month</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Button triggers new movie to be added -->
+        <button type="submit" class="btn" id="event-genre" value="Add a genre">
+          Search
+        </button>
+      </form>
+      <div id="savedEvents">
+        <div class="rowEvents h">
+          <div class="favList">♡ favorites</div>
+          <button id="close" onclick="hide()">x</button>
+        </div>
+
+        <div class="rowEvents">
+          <div class="column"></div>
+          <div class="column"></div>
+        </div>
+      </div>
+
+      <div id="playlistDiv" class="d-flex flex-row"></div>
+
+      <div class="results">
+        <div class="rowResult">
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+      </div>
+
+      <div id="map"></div>
+
+
+      <script src="assets/js/pinme.js"></script>
+
+      <!-- Google Maps -->
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUhoVJmCEDevCj8e82oFi0Vn8UB4uqFvg&callback=initMap"
+        async
+        defer
+      ></script>
+
+      <!-- Uikit-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </div>
+  </body>
+</html>

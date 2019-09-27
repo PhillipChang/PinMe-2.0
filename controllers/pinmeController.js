@@ -10,7 +10,7 @@ var s3 = new AWS.S3({
 })
 
 module.exports = function(app, Sequelize) {
-    const Op = Sequelize.Op;
+    // const Op = Sequelize.Op;
     // Route to Landing Page
     app.get("/", function(req,res){
         res.sendFile(path.join(__dirname, "../public/html/index.html"));
