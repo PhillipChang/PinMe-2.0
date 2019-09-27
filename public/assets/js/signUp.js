@@ -1,6 +1,7 @@
 //when the site loads...
 $(function() {
-
+  
+  // DOM reference to buttons
   var signUpBtn = $("#signUp");
   var signUpError = $("#signUpError");
   //The sign up button within the page
@@ -12,10 +13,13 @@ $(function() {
     var contact = $("#contactInfo").val().trim();
     var email = $("#newUserEmail").val().trim();
 
+    // Validation Checks for name, email and contact
     if (name.length < 5) return signUpError.text("Username must be at least 5 characters!") 
     else if (contact.length < 1) return signUpError.text("You must insert contact info!");
     else if (email.length < 1) return signUpError.text("You must input an email!")
-    // else if (!image) 
+    
+    
+    // Creating Image object and uploading to AWS S3
     var imgCreate = new FormData();
     imgCreate.append("name", name);
     imgCreate.append("file", image);
@@ -29,6 +33,7 @@ $(function() {
       success: function(data) {
         var uid = sessionStorage.getItem("uuid-savant")
 
+        // User Object
         if (uid) {
           var usr = {
             name: name,
@@ -57,4 +62,5 @@ $(function() {
 
   })
 
-})//end of key
+})
+// END
