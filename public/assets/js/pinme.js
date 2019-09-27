@@ -9,6 +9,8 @@ window.onscroll = function () {
 
     if (document.documentElement.scrollTop >= 100 ) {
     	$(myNav).show();
+    	$("#logo").attr("src", "assets/images/logo2.png");
+
         // $(myNav).removeClass("uk-navbar-transparent");
     } 
     else if (document.documentElement.scrollTop >= 10 ) {
@@ -18,6 +20,9 @@ window.onscroll = function () {
 
     else if (document.documentElement.scrollTop < 10) {
     	$(myNav).show();
+    	$("#logo").attr("src", "assets/images/logo.png");
+
         $(myNav).addClass("uk-navbar-transparent");
+
     }
 };
